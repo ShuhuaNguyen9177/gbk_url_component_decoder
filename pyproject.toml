@@ -1,0 +1,14 @@
+[project]
+name = "gbk-url-component-decoder"
+version = "0.1.0"
+description = "Python library for percent-decoding GBK-encoded URL components, avoiding UTF-8 mojibake."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
