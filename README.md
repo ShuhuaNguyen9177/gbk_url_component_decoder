@@ -26,3 +26,10 @@ Older Chinese websites encoded URL path segments with GBK, not UTF-8. When you f
 
 - Strings containing already-decoded characters outside Latin-1 (e.g. raw Chinese) are preserved as-is; only percent sequences are decoded.
 - The function accepts `str` only and raises `TypeError` on other types.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
